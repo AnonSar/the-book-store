@@ -4,10 +4,10 @@ import Footer from "../components/Footer/footer";
 
 const IsLoading = Props => {
   return (
-    <div class="has-fixed-footer">
+    <div className="has-fixed-footer">
       <Header />
       <section id="page-not-found">
-        <div class="container">
+        <div className="container">
           <h1>Loading...</h1>
         </div>
       </section>

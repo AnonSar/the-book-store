@@ -6,7 +6,7 @@ let BooksDetails = (props) => {
     <>
       <section id="book-detail">
         <div className="container">
-          <BookContainerComponent />
+          <BookContainerComponent bookID={props.bookID} />
         </div>
       </section>
     </>

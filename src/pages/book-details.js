@@ -5,9 +5,9 @@ import BookDetailsComponent from "../components/books-detail/books-detail";
 
 const BooksDetails = Props => {
   return (
-    <div class="has-fixed-footer">
+    <div className="has-fixed-footer">
       <Header />
-      <BookDetailsComponent />
+      <BookDetailsComponent bookID={Props.bookID} />
       <Footer />
     </div>
   );

@@ -9,8 +9,8 @@ class BookSectionPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: [1, 2, 3, 4, 5, 6],
-      isLoading: false,
+      books: [],
+      isLoading: true,
     };
   }
 
@@ -22,7 +22,31 @@ class BookSectionPage extends Component {
           "&key=AIzaSyARza5W4ZiSA_8zvJp_WwEJ_AR_bdzdv24"
       )
       .then((response) => {
-        console.log(response);
+        this.setState({
+          books: response.data.items,
+          isLoading: false,
+        });
+      })
+      .catch((err) => console.error(err));
+  };
+
+  componentDidUpdate = (previousProps) => {
+    if (previousProps.categoryName !== this.props.categoryName) {
+      this.setState({
+        isLoading: true,
+      });
+    }
+    axios
+      .get(
+        "https://www.googleapis.com/books/v1/volumes?q=" +
+          this.props.categoryName +
+          "&key=AIzaSyARza5W4ZiSA_8zvJp_WwEJ_AR_bdzdv24"
+      )
+      .then((response) => {
+        this.setState({
+          books: response.data.items,
+          isLoading: false,
+        });
       })
       .catch((err) => console.error(err));
   };

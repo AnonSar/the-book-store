@@ -5,7 +5,7 @@ const BooksContainer = Props => {
   return (
     <div className="books-container">
       {Props.books.map((e,i)=>{
-          return (<Book key={i} />);
+          return (<Book book={e} key={i} />);
       })}
     </div>
   );

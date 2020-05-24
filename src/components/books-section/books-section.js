@@ -7,7 +7,7 @@ const BookSectionComponent = (Props) => {
       <section id="books-section">
         <div className="container">
           <div className="section-title">
-            <h1> {"No books found for "+Props.title}</h1>
+            <h1> {"No books found for " + Props.title}</h1>
           </div>
         </div>
       </section>

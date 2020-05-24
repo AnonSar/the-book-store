@@ -1,22 +1,34 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Book = Props => {
+const Book = (Props) => {
+  let bookThumbNailInfo = {
+    bookThumbnail: Props.book.volumeInfo.imageLinks
+      ? Props.book.volumeInfo.imageLinks.thumbnail
+      : "https://via.placeholder.com/350x150",
+      author: Props.book.volumeInfo.authors ? Props.book.volumeInfo.authors[0] : "Unknown"
+  };
   return (
     <div className="book">
       <div className="book-img">
-        <img src="https://via.placeholder.com/250x200" alt="" />
+        <img
+          src={`${bookThumbNailInfo.bookThumbnail}`}
+          alt={`${Props.book.volumeInfo.title}`}
+        />
       </div>
       <div className="book-info">
         <div className="book-title">
-          <h3>Book Title</h3>
+          <h3>{Props.book.volumeInfo.title}</h3>
         </div>
         <div className="book-author">
           <p>
-            By<em>Author</em>
+            By<em>{bookThumbNailInfo.author}</em>
           </p>
         </div>
         <div className="book-call-to-action">
-          <button className="btn btn-highlight">Details</button>
+          <Link className="btn btn-highlight" to={`/book/${Props.book.id}`}>
+            Details
+          </Link>
         </div>
       </div>
     </div>
