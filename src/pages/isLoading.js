@@ -1,16 +1,19 @@
 import React from "react";
 import Header from "../components/header/header";
 import Footer from "../components/Footer/footer";
-import BookDetailsComponent from "../components/books-detail/books-detail";
 
-const BooksDetails = Props => {
+const IsLoading = Props => {
   return (
     <div class="has-fixed-footer">
       <Header />
-      <BookDetailsComponent />
+      <section id="page-not-found">
+        <div class="container">
+          <h1>Loading...</h1>
+        </div>
+      </section>
       <Footer />
     </div>
   );
 };
 
-export default BooksDetails;
+export default IsLoading;

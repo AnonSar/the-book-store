@@ -13,7 +13,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={BookSectionPage}/>
             <Route path="/book/category/:categoryName" exact render = { (props) => {
-              return <BookSectionPage categoryName = "JavaScript" />
+              return <BookSectionPage categoryName = {props.match.params.categoryName} />
             }} />
             <Route path="/book/:bookID" exact component={BookDetails} />
             <Route component={PageNotFound} />
