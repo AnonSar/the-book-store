@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
-const Header = Props => {
+const Header = (Props) => {
   return (
     <header id="header">
       <div className="container">
