@@ -1,6 +1,6 @@
 {
   "name": "the-book-app",
-  "homepage": "http://AnonSar.github.io/",
+  "homepage": "http://AnonSar.github.io/the-book-store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
