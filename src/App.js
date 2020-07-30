@@ -10,7 +10,8 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route path="/the-book-store" exact component={BookSectionPage} />
+          <Route path="/" exact component={BookSectionPage} />
+            <Route path="/the-book-store/" exact component={BookSectionPage} />
             <Route
               path="/book/category/:categoryName"
               exact
